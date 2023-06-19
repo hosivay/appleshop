@@ -19,14 +19,17 @@ const List<Map<String, Object>> SettingsItemData2 = [
   {
     "title": "Telegram",
     "icon": CupertinoIcons.bubble_left_bubble_right,
+    "Url": "https://t.me/hosivay"
   },
   {
     "title": "Instagram",
     "icon": CupertinoIcons.at,
+     "Url": "https://instagram.com/hosivay"
   },
   {
     "title": "GitHub",
     "icon": CupertinoIcons.bolt,
+     "Url": "https://github.com/hosivay"
   },
 ];
 
