@@ -13,22 +13,21 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-        navigationBar: Appbar_SearchPage(context),
-        // ignore: avoid_unnecessary_containers
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(5, 30, 5, 0),
-          // ignore: avoid_unnecessary_containers
-          child: Container(
-            child: Flexible(
-              child: GridView.count(
-                physics: const NeverScrollableScrollPhysics(),
-                crossAxisCount: 2,
-                children: List.generate(ProductCategory.length, (index) {
-                  return GridWidget(index);
-                }),
-              ),
+      navigationBar: Appbar_SearchPage(context),
+      child: Flex(
+        direction: Axis.vertical,
+        children: [
+          Expanded(
+            child: GridView.count(
+              physics: const NeverScrollableScrollPhysics(),
+              crossAxisCount: 2,
+              children: List.generate(ProductCategory.length, (index) {
+                return GridWidget(index);
+              }),
             ),
           ),
-        ));
+        ],
+      ),
+    );
   }
 }
