@@ -33,3 +33,23 @@ const List<Map<String, String>> IpadList = [
         "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-air-select-wifi-spacegray-202203?wid=940&hei=1112&fmt=png-alpha&.v=1645066742664",
   },
 ];
+
+const String BG_Watch = "https://help.apple.com/assets/6398A9D9257A2C1D9026967A/6398A9DD257A2C1D9026968B/en_US/3a32f1c0e95a134f8b5fb01b3bccdeed.png";
+
+const List<Map<String, String>> WatchList = [
+  {
+    "title": "Watch Ultra",
+    "image":
+        "https://ivenus.in/wp-content/uploads/2022/09/MQEE3_VW_34FRwatch-49-titanium-ultra_VW_34FR_WF_COwatch-face-49-ocean-ultra_VW_34FR_WF_CO_GEO_IN-1.png",
+  },
+  {
+    "title": "Watch 8",
+    "image":
+        "https://media.croma.com/image/upload/v1685968328/Croma%20Assets/Communication/Wearable%20Devices/Images/262072_nwe2iq.png",
+  },
+  {
+    "title": "Watch SE",
+    "image":
+        "https://ochek.ir/wp-content/uploads/2022/09/MP7U3ref_VW_34FRwatch-44-alum-silver-nc-se_VW_34FR_WF_CO-removebg-preview.png",
+  },
+];

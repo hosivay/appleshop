@@ -3,20 +3,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
 
+import '../../data/ArticleData.dart';
 import 'ViewArticle.dart';
 
 class ArticleWidget extends StatelessWidget {
-  final String imageUrl;
-  final String leading;
-  final String title;
-  final String description;
+  final int index;
 
   const ArticleWidget({
     Key? key,
-    required this.imageUrl,
-    required this.leading,
-    required this.title,
-    required this.description,
+    required this.index,
   }) : super(key: key);
 
   @override
@@ -27,7 +22,9 @@ class ArticleWidget extends StatelessWidget {
         onTap: () {
           Navigator.of(context).push(CupertinoPageRoute(
             builder: (context) {
-              return  ViewArticlePage(title: title,urlImage: imageUrl,);
+              return ViewArticlePage(
+                index: index,
+              );
             },
           ));
         },
@@ -40,54 +37,12 @@ class ArticleWidget extends StatelessWidget {
             child: Stack(
               children: [
                 Positioned.fill(
-                  child:CachedNetworkImage(
-               imageUrl:
-                    imageUrl,
+                  child: CachedNetworkImage(
+                    imageUrl: ArticleData[index]["imageUrl"] as String,
                     fit: BoxFit.cover,
                     height: 500,
                   ),
                 ),
-                // Positioned(
-                //   top: 0,
-                //   left: 0,
-                //   right: 0,
-                //   child: Container(
-                //     width: 100,
-                //     height: 100,
-                //     decoration:  BoxDecoration(
-                //       gradient: LinearGradient(
-                //         begin: Alignment.topCenter,
-                //         end: Alignment.bottomCenter,
-                //         colors: [
-                //             Colors.grey.shade900.withOpacity(0.4),
-                //            Colors.white.withOpacity(0.0),
-                //            Colors.white.withOpacity(0.0),
-                //           ],
-                //       ),
-                //     ),
-                //   ),
-                // ),
-                //     Positioned(
-                //   bottom: 0,
-                //   left: 0,
-                //   right: 0,
-                //   child: Container(
-                //     width: 100,
-                //     height: 100,
-                //     decoration:  BoxDecoration(
-                //       gradient: LinearGradient(
-                //         begin: Alignment.topCenter,
-                //         end: Alignment.bottomCenter,
-                //         colors: [
-                //            Colors.white.withOpacity(0.0),
-                //            Colors.white.withOpacity(0.0),
-                //           Colors.grey.shade900.withOpacity(0.4),
-
-                //           ],
-                //       ),
-                //     ),
-                //   ),
-                // ),
                 Container(
                   height: 400,
                   padding: const EdgeInsets.symmetric(
@@ -97,16 +52,10 @@ class ArticleWidget extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Text(
-                      //   leading.toUpperCase(),
-                      //   style: TextStyle(
-                      //     color: Colors.grey[300],
-                      //     fontWeight: FontWeight.w600,
-                      //   ),
-                      // ),
+                 
                       const SizedBox(height: 5),
                       Text(
-                        title,
+                        ArticleData[index]["title"] as String,
                         style: const TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
@@ -115,7 +64,7 @@ class ArticleWidget extends StatelessWidget {
                       ),
                       const Spacer(),
                       Text(
-                        description,
+                        ArticleData[index]["description"].toString().substring(0, 100),
                         style: const TextStyle(
                           color: Colors.black,
                         ),

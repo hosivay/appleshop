@@ -37,9 +37,24 @@ class HomePage extends StatelessWidget {
                     BackgroundImage:
                        BG_Ipad,
                     context: context),
+                     const SizedBox(
+                  height: 30,
+                ),
+                const Divider(),
+                RowItems(
+                    TitleUp: "Watch",
+                    detail: WatchList,
+                    BackgroundColor: Colors.deepOrange,
+                    BackgroundImage:
+                       BG_Watch,
+                    context: context),
                 const SizedBox(
                   height: 100,
                 ),
+                const SizedBox(
+                  height: 100,
+                ),
+                
               ]),
             ),
           )

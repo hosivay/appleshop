@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 
+import '../../../data/SlideInHomeData.dart';
+
 Widget RowItems(
     {required List detail,
     // ignore: non_constant_identifier_names
@@ -134,29 +136,24 @@ Widget RowItems(
   );
 }
 
-
- FlutterCarousel imageSlider(BuildContext context) {
-    return FlutterCarousel(
-                options: CarouselOptions(
-                  autoPlay: true,
-                  autoPlayInterval: const Duration(seconds: 10),
-                  viewportFraction: 0.8,
-                  enlargeCenterPage: true,
-                  slideIndicator: CircularWaveSlideIndicator(
-                      currentIndicatorColor: CupertinoTheme.of(context)
-                          .textTheme
-                          .textStyle
-                          .color,
-                      indicatorBackgroundColor: CupertinoTheme.of(context)
-                          .barBackgroundColor
-                          .withOpacity(0.7),
-                      indicatorBorderColor: Colors.grey),
-                  floatingIndicator: false,
-                ),
-                items: sliders,
-              );
-  }
-
+FlutterCarousel imageSlider(BuildContext context) {
+  return FlutterCarousel(
+    options: CarouselOptions(
+      autoPlay: true,
+      autoPlayInterval: const Duration(seconds: 10),
+      viewportFraction: 0.8,
+      enlargeCenterPage: true,
+      slideIndicator: CircularWaveSlideIndicator(
+          currentIndicatorColor:
+              CupertinoTheme.of(context).textTheme.textStyle.color,
+          indicatorBackgroundColor:
+              CupertinoTheme.of(context).barBackgroundColor.withOpacity(0.7),
+          indicatorBorderColor: Colors.grey),
+      floatingIndicator: false,
+    ),
+    items: sliders,
+  );
+}
 
 class Slide {
   Slide({
@@ -171,22 +168,18 @@ class Slide {
 }
 
 var slides = List.generate(
-  6,
+  SlideData.length,
   (index) => Slide(
-    title: 'Slide ${index + 1}',
-    description: 'Safari extension, Focus, notification summary and more.',
-    imageUrl:
-        "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-model-unselect-gallery-2-202209_GEO_US?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1660753617560",
-  ),
+      title: SlideData[index]["title"] as String,
+      description: SlideData[index]["description"] as String,
+      imageUrl: SlideData[index]["imageUrl"] as String),
 );
 
 final List<Widget> sliders = slides
     .map((item) => Padding(
           padding: const EdgeInsets.fromLTRB(10, 40, 10, 30),
           child: Bounceable(
-            onTap: () {
-
-            },
+            onTap: () {},
             child: PhysicalModel(
               color: Colors.black,
               borderRadius: BorderRadius.circular(14),
@@ -200,6 +193,37 @@ final List<Widget> sliders = slides
                         imageUrl: item.imageUrl,
                         fit: BoxFit.cover,
                         height: 500,
+                      ),
+                    ),
+                    Container(
+                      height: 90,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Colors.white.withOpacity(0.5),
+                            Colors.white.withOpacity(0.001)
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      child: Container(
+                        height: 90,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
+                            colors: [
+                              Colors.white.withOpacity(0.5),
+                              Colors.white.withOpacity(0.001)
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                     Container(
