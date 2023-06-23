@@ -32,8 +32,6 @@ class _MyAppState extends State<MyApp> {
       home: const MyHomePage(),
     );
   }
-
-
 }
 
 class MyHomePage extends StatefulWidget {
@@ -44,33 +42,35 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  
+  List<BottomNavigationBarItem> TapItemList = [
+    const BottomNavigationBarItem(
+        backgroundColor: Colors.white,
+        activeIcon: Icon(CupertinoIcons.house_fill),
+        icon: Icon(CupertinoIcons.house),
+        label: 'Home'),
+    const BottomNavigationBarItem(
+        activeIcon: Icon(CupertinoIcons.search),
+        icon: Icon(CupertinoIcons.search),
+        label: 'Search'),
+    const BottomNavigationBarItem(
+        activeIcon: Icon(CupertinoIcons.collections_solid),
+        icon: Icon(CupertinoIcons.collections),
+        label: 'Article'),
+    const BottomNavigationBarItem(
+        activeIcon: Icon(CupertinoIcons.settings_solid),
+        icon: Icon(CupertinoIcons.settings),
+        label: 'Settings'),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
-        currentIndex: 0,
-        backgroundColor:
-            CupertinoTheme.of(context).barBackgroundColor.withOpacity(0.5),
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-              backgroundColor: Colors.white,
-              activeIcon: Icon(CupertinoIcons.house_fill),
-              icon: Icon(CupertinoIcons.house),
-              label: 'Home'),
-          BottomNavigationBarItem(
-              activeIcon: Icon(CupertinoIcons.search),
-              icon: Icon(CupertinoIcons.search),
-              label: 'Search'),
-          BottomNavigationBarItem(
-              activeIcon: Icon(CupertinoIcons.collections_solid),
-              icon: Icon(CupertinoIcons.collections),
-              label: 'Article'),
-          BottomNavigationBarItem(
-              activeIcon: Icon(CupertinoIcons.settings_solid),
-              icon: Icon(CupertinoIcons.settings),
-              label: 'Settings'),
-        ],
-      ),
+          currentIndex: 0,
+          backgroundColor:
+              CupertinoTheme.of(context).barBackgroundColor.withOpacity(0.5),
+          items: TapItemList),
       tabBuilder: (context, index) {
         late final CupertinoTabView returnValue;
         switch (index) {

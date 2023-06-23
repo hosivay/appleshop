@@ -1,4 +1,7 @@
 
+
+
+const String BG_Iphone = "https://images.dailyobjects.com/marche/product-images/1101/slick-phone-case-cover-for-iphone-14-plus-images/Nimbus-Phone-Case-Cover-For-iPhone-14-Max.png?tr=cm-pad_resize,v-2";
 // ignore: constant_identifier_names
 const List<Map<String, String>> IphoneList = [
   {
@@ -18,9 +21,9 @@ const List<Map<String, String>> IphoneList = [
   },
 ];
 
-
 // ignore: constant_identifier_names
-const String BG_Ipad = "https://www.nfm.com/on/demandware.static/-/Library-Sites-NFMSharedLibrary/default/dw5a45665b/images/brand-lp-content/apple/apple-ipad/apple_ipad-2021-family.png";
+const String BG_Ipad =
+    "https://www.nfm.com/on/demandware.static/-/Library-Sites-NFMSharedLibrary/default/dw5a45665b/images/brand-lp-content/apple/apple-ipad/apple_ipad-2021-family.png";
 // ignore: constant_identifier_names
 const List<Map<String, String>> IpadList = [
   {
@@ -34,7 +37,8 @@ const List<Map<String, String>> IpadList = [
   },
 ];
 
-const String BG_Watch = "https://help.apple.com/assets/6398A9D9257A2C1D9026967A/6398A9DD257A2C1D9026968B/en_US/3a32f1c0e95a134f8b5fb01b3bccdeed.png";
+const String BG_Watch =
+    "https://help.apple.com/assets/6398A9D9257A2C1D9026967A/6398A9DD257A2C1D9026968B/en_US/3a32f1c0e95a134f8b5fb01b3bccdeed.png";
 
 const List<Map<String, String>> WatchList = [
   {

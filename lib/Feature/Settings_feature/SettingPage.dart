@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../data/UserData.dart';
@@ -69,6 +71,7 @@ class SettingPage extends StatelessWidget {
                       onTap: () {}),
                 ],
               ),
+             
               const SizedBox(
                 height: 25,
               ),
