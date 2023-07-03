@@ -20,10 +20,10 @@ class HomePage extends StatelessWidget {
                 imageSlider(context),
                 const Divider(),
                 RowItems(
-                    TitleUp: "iPhone",
+                    titleUp: "iPhone",
                     detail: IphoneList,
-                    BackgroundColor: Colors.blueAccent,
-                    BackgroundImage:
+                    backgroundColor: Colors.blueAccent,
+                    backgroundImage:
                         "https://images.dailyobjects.com/marche/product-images/1101/slick-phone-case-cover-for-iphone-14-plus-images/Nimbus-Phone-Case-Cover-For-iPhone-14-Max.png?tr=cm-pad_resize,v-2",
                     context: context),
                 const SizedBox(
@@ -31,10 +31,10 @@ class HomePage extends StatelessWidget {
                 ),
                 const Divider(),
                 RowItems(
-                    TitleUp: "iPad",
+                    titleUp: "iPad",
                     detail: IpadList,
-                    BackgroundColor: Colors.red.shade800,
-                    BackgroundImage:
+                    backgroundColor: Colors.red.shade800,
+                    backgroundImage:
                        BG_Ipad,
                     context: context),
                      const SizedBox(
@@ -42,10 +42,10 @@ class HomePage extends StatelessWidget {
                 ),
                 const Divider(),
                 RowItems(
-                    TitleUp: "Watch",
-                    detail: WatchList,
-                    BackgroundColor: Colors.deepOrange,
-                    BackgroundImage:
+                    titleUp: "Watch",
+                    detail: watchList,
+                    backgroundColor: Colors.deepOrange,
+                    backgroundImage:
                        BG_Watch,
                     context: context),
                 const SizedBox(

@@ -41,6 +41,7 @@ dependencies:
   flutter_carousel_widget: ^2.0.4
   cached_network_image: ^3.2.3
   url_launcher: ^6.1.11
+  animate_do: ^3.0.2
 
 dev_dependencies:
   flutter_test:

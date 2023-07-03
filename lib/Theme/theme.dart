@@ -10,5 +10,5 @@ CupertinoThemeData themeData(bool isDark) {
       barBackgroundColor: isDark ? Colors.black : Colors.grey.shade200,
       applyThemeToAll: true,
       brightness: isDark ? Brightness.dark : Brightness.light,
-      primaryColor: Colors.grey.shade700);
+      primaryColor: Colors.blue.shade700);
 }

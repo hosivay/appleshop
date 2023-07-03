@@ -42,7 +42,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  
   List<BottomNavigationBarItem> TapItemList = [
     const BottomNavigationBarItem(
         backgroundColor: Colors.white,

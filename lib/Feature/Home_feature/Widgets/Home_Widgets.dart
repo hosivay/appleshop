@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:appleshop/Feature/ProductDetail_feature/ProductDetailPage.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -9,130 +10,149 @@ import '../../../data/SlideInHomeData.dart';
 
 Widget RowItems(
     {required List detail,
-    // ignore: non_constant_identifier_names
-    required String TitleUp,
-    // ignore: non_constant_identifier_names
-    required String BackgroundImage,
-    // ignore: non_constant_identifier_names
-    required Color BackgroundColor,
+    required String titleUp,
+    required String backgroundImage,
+    required Color backgroundColor,
     required BuildContext context}) {
-  return Column(
-    children: [
-      Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          children: [
-            const SizedBox(
-              width: 10,
-            ),
-            Text(
-              TitleUp,
-              style: TextStyle(
-                  color: CupertinoTheme.of(context).textTheme.textStyle.color,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold),
-            )
-          ],
-        ),
-      ),
-      const SizedBox(
-        height: 10,
-      ),
-      Stack(
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(5, 0, 0, 0),
-            child: ClipRRect(
-              borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  bottomLeft: Radius.circular(20)),
-              child: Container(
-                  height: 229,
-                  color: BackgroundColor,
-                  child: Row(
-                    children: [
-                      CachedNetworkImage(
-                        imageUrl: BackgroundImage,
-                        width: 200,
-                        height: 200,
-                      ),
-                    ],
-                  )),
-            ),
+  return Material(
+    color: CupertinoTheme.of(context).scaffoldBackgroundColor,
+    child: Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              const SizedBox(
+                width: 10,
+              ),
+              Text(
+                titleUp,
+                style: TextStyle(
+                    color: CupertinoTheme.of(context).textTheme.textStyle.color,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold),
+              )
+            ],
           ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                const SizedBox(
-                  width: 190,
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 1.7,
-                  height: 230,
-                  child: ListView.builder(
-                    itemCount: detail.length,
-                    scrollDirection: Axis.horizontal,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index) {
-                      return Row(
-                        children: [
-                          Stack(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(30),
-                                  // ignore: sized_box_for_whitespace
-                                  child: BackdropFilter(
-                                    filter:
-                                        ImageFilter.blur(sigmaX: 7, sigmaY: 7),
-                                    child: Container(
-                                      width: 170,
-                                      height: 230,
-                                      decoration: BoxDecoration(
-                                        gradient: LinearGradient(
-                                          colors: [
-                                            Colors.grey.shade300
-                                                .withOpacity(0.5),
-                                            Colors.grey.shade200
-                                                .withOpacity(0.5),
-                                          ],
-                                          begin: Alignment.topLeft,
-                                          end: Alignment.bottomRight,
-                                        ),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            0, 40, 0, 40),
-                                        child: CachedNetworkImage(
-                                          imageUrl: "${detail[index]["image"]}",
-                                          fit: BoxFit.fitHeight,
-                                          // width: 110,
-                                          // height: 110,
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        Stack(
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(5, 0, 0, 0),
+              child: ClipRRect(
+                borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    bottomLeft: Radius.circular(20)),
+                child: Container(
+                    height: 229,
+                    color: backgroundColor,
+                    child: Row(
+                      children: [
+                        CachedNetworkImage(
+                          imageUrl: backgroundImage,
+                          width: 200,
+                          height: 200,
+                        ),
+                      ],
+                    )),
+              ),
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  const SizedBox(
+                    width: 190,
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 1.7,
+                    height: 230,
+                    child: ListView.builder(
+                      itemCount: detail.length,
+                      scrollDirection: Axis.horizontal,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemBuilder: (context, index) {
+                        return Row(
+                          children: [
+                            Bounceable(
+                              onTap: () {},
+                              child: Stack(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: InkWell(
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          CupertinoPageRoute(
+                                              builder: (context) =>
+                                                  ProductDetailPage(
+                                                    productName: detail[index]
+                                                        ["title"],
+                                                    categoryProduct: titleUp,
+                                                  )),
+                                        );
+                                      },
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(30),
+                                        // ignore: sized_box_for_whitespace
+                                        child: BackdropFilter(
+                                          filter: ImageFilter.blur(
+                                              sigmaX: 7, sigmaY: 7),
+                                          child: Container(
+                                            width: 170,
+                                            height: 230,
+                                            decoration: BoxDecoration(
+                                              gradient: LinearGradient(
+                                                colors: [
+                                                  Colors.grey.shade300
+                                                      .withOpacity(0.5),
+                                                  Colors.grey.shade200
+                                                      .withOpacity(0.5),
+                                                ],
+                                                begin: Alignment.topLeft,
+                                                end: Alignment.bottomRight,
+                                              ),
+                                            ),
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.fromLTRB(
+                                                      0, 40, 0, 40),
+                                              child: CachedNetworkImage(
+                                                imageUrl:
+                                                    "${detail[index]["image"]}",
+                                                fit: BoxFit.fitHeight,
+                                                // width: 110,
+                                                // height: 110,
+                                              ),
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ),
                                   ),
-                                ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(25.0),
+                                    child: Text('${detail[index]["title"]}'),
+                                  )
+                                ],
                               ),
-                              Padding(
-                                padding: const EdgeInsets.all(25.0),
-                                child: Text('${detail[index]["title"]}'),
-                              )
-                            ],
-                          ),
-                        ],
-                      );
-                    },
+                            ),
+                          ],
+                        );
+                      },
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
-      )
-    ],
+          ],
+        )
+      ],
+    ),
   );
 }
 
