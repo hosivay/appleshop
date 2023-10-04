@@ -70,7 +70,7 @@ const List watch8 = [
   "https://media.croma.com/image/upload/v1685968328/Croma%20Assets/Communication/Wearable%20Devices/Images/262072_nwe2iq.png",
   "https://www.apple.com/newsroom/images/environments/stores/Apple-Fifth-Avenue-New-York-trying-Apple-Watch-Series-8-220916_big.jpg.slideshow-xlarge.jpg",
   "https://cdn.mos.cms.futurecdn.net/CjZ8FA7q7c9cgQSP5U9K2E.jpg",
- 
+
 ];
 
 //Watch SE Images :

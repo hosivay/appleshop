@@ -34,10 +34,9 @@ class HomePage extends StatelessWidget {
                     titleUp: "iPad",
                     detail: IpadList,
                     backgroundColor: Colors.red.shade800,
-                    backgroundImage:
-                       BG_Ipad,
+                    backgroundImage: BG_Ipad,
                     context: context),
-                     const SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 const Divider(),
@@ -45,8 +44,7 @@ class HomePage extends StatelessWidget {
                     titleUp: "Watch",
                     detail: watchList,
                     backgroundColor: Colors.deepOrange,
-                    backgroundImage:
-                       BG_Watch,
+                    backgroundImage: BG_Watch,
                     context: context),
                 const SizedBox(
                   height: 100,
@@ -54,7 +52,6 @@ class HomePage extends StatelessWidget {
                 const SizedBox(
                   height: 100,
                 ),
-                
               ]),
             ),
           )
@@ -62,10 +59,6 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-
- 
-
-
 }
 
 // ignore: non_constant_identifier_names
