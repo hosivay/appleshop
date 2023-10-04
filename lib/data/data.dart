@@ -1,4 +1,2 @@
-
 // ignore: constant_identifier_names
-const Version = 1.0;
-
+const String Version = "1.0.1";

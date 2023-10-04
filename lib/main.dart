@@ -2,6 +2,7 @@ import 'package:appleshop/Feature/Article_feature/ArticlesPage.dart';
 import 'package:appleshop/Feature/Settings_feature/SettingPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'dart:ui';
 
 import 'Feature/Home_feature/HomePage.dart';
 import 'Feature/Search_feature/SearchPage.dart';
@@ -29,6 +30,19 @@ class _MyAppState extends State<MyApp> {
       title: 'Apple Shop',
       debugShowCheckedModeBanner: false,
       theme: themeData(isDark),
+      localizationsDelegates: const [
+        DefaultMaterialLocalizations.delegate,
+        DefaultWidgetsLocalizations.delegate,
+        // Add other delegates as needed
+      ],
+      scrollBehavior: const MaterialScrollBehavior().copyWith(
+        dragDevices: {
+          PointerDeviceKind.mouse,
+          PointerDeviceKind.touch,
+          PointerDeviceKind.stylus,
+          PointerDeviceKind.unknown
+        },
+      ),
       home: const MyHomePage(),
     );
   }

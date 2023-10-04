@@ -28,14 +28,14 @@ Widget TopButton(
         color: CupertinoTheme.of(context).barBackgroundColor == Colors.black
             ? Colors.grey.shade800
             : Colors.white,
-        width: MediaQuery.of(context).size.width / 3.5,
-        height: MediaQuery.of(context).size.width / 4.2,
+        width: MediaQuery.of(context).size.width / 3.9,
+        height: MediaQuery.of(context).size.width / 4.7,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Icon(
               icon,
-              size: 35,
+              size: 37,
               color: CupertinoTheme.of(context).textTheme.textStyle.color,
             ),
             Text(title)
@@ -53,11 +53,11 @@ Widget ItemSettings(
     required Widget rightWidget,
     required bool isOnTap,
     String? url}) {
-  return Material(color:  CupertinoTheme.of(context).barBackgroundColor == Colors.black
-                ? Colors.grey.shade800
-                : Colors.white,
+  return Material(
+    color: CupertinoTheme.of(context).barBackgroundColor == Colors.black
+        ? Colors.grey.shade800
+        : Colors.white,
     child: InkWell(
-     
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       onTap: () async {
@@ -98,10 +98,10 @@ Widget ItemSettings(
                 ),
                 Text(
                   title,
-                  style:  TextStyle(
-                    color: CupertinoTheme.of(context).textTheme.textStyle.color,
-                    fontSize: 15
-                    ),
+                  style: TextStyle(
+                      color:
+                          CupertinoTheme.of(context).textTheme.textStyle.color,
+                      fontSize: 15),
                 ),
                 const Spacer(),
                 Padding(
